@@ -2,7 +2,7 @@ import { useState } from "react";
 import {
   Table2, BarChart3, Image, FileText, Globe, List, Map, Mic, Camera, CheckSquare,
   ScanLine, DollarSign, Calendar, Upload, Type, Phone, RadioTower, TextCursorInput,
-  ToggleLeft, TreePine, Columns, Minus, FileInput, Layers, Tabs, MousePointerClick,
+  ToggleLeft, TreePine, Columns, Minus, FileInput, Layers, PanelTop, MousePointerClick,
   SlidersHorizontal, Star, ArrowRight, ChevronDown, ChevronUp,
 } from "lucide-react";
 import { Link } from "react-router-dom";
