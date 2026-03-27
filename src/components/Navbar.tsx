@@ -5,9 +5,11 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { path: "/", label: "Home" },
-  { path: "/features", label: "Features" },
+  { path: "/features", label: "Widgets" },
+  { path: "/integrations", label: "Integrations" },
+  { path: "/templates", label: "Templates" },
+  { path: "/use-cases", label: "Use Cases" },
   { path: "/pricing", label: "Pricing" },
-  { path: "/case-studies", label: "Case Studies" },
   { path: "/about", label: "About" },
   { path: "/contact", label: "Contact" },
 ];
@@ -21,13 +23,13 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-gradient-gold flex items-center justify-center">
-            <span className="font-display font-bold text-primary-foreground text-sm">N</span>
+            <span className="font-display font-bold text-primary-foreground text-sm">O</span>
           </div>
-          <span className="font-display font-bold text-xl text-foreground">NovaPulse</span>
+          <span className="font-display font-bold text-xl text-foreground">One Logic Tec</span>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.path}
@@ -41,7 +43,7 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4">
           <Link to="/contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             Log In
           </Link>
@@ -49,14 +51,14 @@ const Navbar = () => {
             to="/contact"
             className="px-5 py-2.5 rounded-lg bg-gradient-gold text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity"
           >
-            Get Started Free
+            Try OneApp Free
           </Link>
         </div>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-foreground"
+          className="lg:hidden text-foreground"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -69,7 +71,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-t border-border"
+            className="lg:hidden glass border-t border-border"
           >
             <div className="container mx-auto px-6 py-4 flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -89,7 +91,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
                 className="px-5 py-2.5 rounded-lg bg-gradient-gold text-primary-foreground font-semibold text-sm text-center"
               >
-                Get Started Free
+                Try OneApp Free
               </Link>
             </div>
           </motion.div>

@@ -7,39 +7,39 @@ import AnimatedSection from "@/components/AnimatedSection";
 
 const plans = [
   {
-    name: "Starter",
-    price: "$49",
-    period: "/month",
-    description: "Perfect for small teams getting started with analytics. All the essentials without the complexity.",
+    name: "Community",
+    price: "Free",
+    period: "",
+    description: "Open-source and free forever. Perfect for individual developers and small teams getting started with internal tools.",
     features: [
-      "Up to 5 team members",
-      "10,000 events/month",
-      "5 custom dashboards",
-      "7-day data retention",
-      "Email support",
-      "Basic integrations",
-      "Standard reports",
-      "Mobile app access",
+      "Unlimited apps",
+      "5 team members",
+      "All 45+ widgets",
+      "Core integrations",
+      "Git version control",
+      "Community support",
+      "Self-hosted deployment",
+      "Custom widgets",
     ],
-    cta: "Start Free Trial",
+    cta: "Get Started Free",
     popular: false,
   },
   {
-    name: "Professional",
-    price: "$149",
-    period: "/month",
-    description: "For growing teams that need advanced analytics, AI insights, and deeper integrations.",
+    name: "Business",
+    price: "$49",
+    period: "/user/month",
+    description: "For growing teams that need advanced access controls, priority support, and enterprise integrations.",
     features: [
-      "Up to 25 team members",
-      "500,000 events/month",
-      "Unlimited dashboards",
-      "90-day data retention",
-      "Priority support",
-      "All integrations",
-      "AI-powered insights",
-      "Custom reports & alerts",
-      "API access",
-      "Team workspaces",
+      "Everything in Community",
+      "Unlimited team members",
+      "SSO / SAML authentication",
+      "Granular access controls",
+      "Audit logs",
+      "Priority email support",
+      "OneApp Cloud hosting",
+      "Custom branding",
+      "Advanced integrations",
+      "Environments (dev/staging/prod)",
     ],
     cta: "Start Free Trial",
     popular: true,
@@ -48,20 +48,18 @@ const plans = [
     name: "Enterprise",
     price: "Custom",
     period: "",
-    description: "For large organizations requiring unlimited scale, dedicated support, and custom solutions.",
+    description: "For large organizations needing dedicated infrastructure, SLA guarantees, and hands-on onboarding.",
     features: [
-      "Unlimited team members",
-      "Unlimited events",
-      "Unlimited dashboards",
-      "Unlimited data retention",
+      "Everything in Business",
+      "Dedicated instance",
+      "99.99% uptime SLA",
       "Dedicated account manager",
+      "Custom training & onboarding",
+      "Air-gapped deployment",
+      "HIPAA & SOC 2 compliance",
       "Custom integrations",
-      "Advanced AI & ML",
-      "White-label options",
-      "SLA guarantee",
-      "On-premise deployment",
-      "Custom training",
-      "Priority engineering",
+      "Premium support (< 1hr SLA)",
+      "Architecture review",
     ],
     cta: "Contact Sales",
     popular: false,
@@ -69,42 +67,42 @@ const plans = [
 ];
 
 const comparisonFeatures = [
-  { feature: "Team Members", starter: "5", pro: "25", enterprise: "Unlimited" },
-  { feature: "Monthly Events", starter: "10K", pro: "500K", enterprise: "Unlimited" },
-  { feature: "Dashboards", starter: "5", pro: "Unlimited", enterprise: "Unlimited" },
-  { feature: "Data Retention", starter: "7 days", pro: "90 days", enterprise: "Unlimited" },
-  { feature: "AI Insights", starter: false, pro: true, enterprise: true },
-  { feature: "Custom Reports", starter: false, pro: true, enterprise: true },
-  { feature: "API Access", starter: false, pro: true, enterprise: true },
-  { feature: "SSO / SAML", starter: false, pro: false, enterprise: true },
-  { feature: "White Label", starter: false, pro: false, enterprise: true },
+  { feature: "Team Members", starter: "5", pro: "Unlimited", enterprise: "Unlimited" },
+  { feature: "Apps", starter: "Unlimited", pro: "Unlimited", enterprise: "Unlimited" },
+  { feature: "Widgets", starter: "45+", pro: "45+", enterprise: "45+ & Custom" },
+  { feature: "Self-Hosting", starter: true, pro: true, enterprise: true },
+  { feature: "Cloud Hosting", starter: false, pro: true, enterprise: true },
+  { feature: "SSO / SAML", starter: false, pro: true, enterprise: true },
+  { feature: "Audit Logs", starter: false, pro: true, enterprise: true },
+  { feature: "Environments", starter: false, pro: true, enterprise: true },
+  { feature: "Uptime SLA", starter: false, pro: false, enterprise: true },
   { feature: "Dedicated Support", starter: false, pro: false, enterprise: true },
 ];
 
 const faqs = [
   {
-    question: "Can I switch plans at any time?",
-    answer: "Absolutely. You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate the difference. No lock-in contracts, no cancellation fees.",
+    question: "Is OneApp really free?",
+    answer: "Yes! The Community edition is free and open-source forever. You can self-host it on your own infrastructure with no limits on the number of apps you build. The Business and Enterprise plans add team collaboration, access controls, and managed hosting.",
   },
   {
-    question: "What happens after my 14-day free trial?",
-    answer: "After your trial ends, you can choose any plan that fits your needs. Your data and dashboards are preserved — nothing is lost. If you don't choose a plan, your account will be paused until you're ready.",
-  },
-  {
-    question: "Do you offer discounts for annual billing?",
-    answer: "Yes! When you choose annual billing, you save 20% compared to monthly pricing. That's essentially getting 2+ months free. Contact our team for custom volume discounts on Enterprise plans.",
+    question: "Can I self-host OneApp?",
+    answer: "Absolutely. OneApp supports Docker, Kubernetes, and AWS/GCP/Azure deployments. The Community edition is fully self-hostable. Enterprise customers can also opt for air-gapped deployments for maximum security.",
   },
   {
     question: "What integrations are included?",
-    answer: "The Starter plan includes our most popular integrations (Google Analytics, Stripe, Shopify). Professional and Enterprise plans include all 200+ integrations, including Salesforce, HubSpot, Snowflake, and more.",
+    answer: "All plans include core database connectors (PostgreSQL, MongoDB, MySQL, etc.) and the REST API connector. Business and Enterprise plans unlock premium connectors like Salesforce, Snowflake, and AI services (OpenAI, Anthropic).",
   },
   {
-    question: "Is my data secure?",
-    answer: "Absolutely. We're SOC 2 Type II certified and GDPR compliant. All data is encrypted at rest (AES-256) and in transit (TLS 1.3). Enterprise customers also get options for on-premise deployment and custom security configurations.",
+    question: "How does pricing work for teams?",
+    answer: "Community is free for up to 5 team members. Business pricing is per-user per-month. Enterprise pricing is custom based on your organization's needs — contact our sales team for a quote.",
   },
   {
-    question: "Can I get a demo before purchasing?",
-    answer: "Of course! Our team offers personalized demos where we walk you through the platform using your actual data scenarios. Book a demo through our contact page, and we'll have you set up within 24 hours.",
+    question: "Do you offer a free trial for paid plans?",
+    answer: "Yes! The Business plan comes with a 14-day free trial with full access to all features. No credit card required. Enterprise trials are available on request with a personalized demo.",
+  },
+  {
+    question: "Can I migrate from Appsmith or Retool?",
+    answer: "Yes. OneApp is based on the Appsmith codebase, so migration is straightforward. Our team provides hands-on migration support for Business and Enterprise customers to ensure a smooth transition.",
   },
 ];
 
@@ -124,7 +122,7 @@ const Pricing = () => {
               <span className="text-gradient-gold">Pricing</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              No hidden fees. No surprise charges. Choose the plan that fits your team and start making data-driven decisions today. All plans include a 14-day free trial.
+              Start free and scale as your team grows. No hidden fees. Open-source core with premium add-ons for teams that need more.
             </p>
           </AnimatedSection>
         </div>
@@ -168,7 +166,7 @@ const Pricing = () => {
 
                   <Link
                     to="/contact"
-                    className={`w-full text-center py-3.5 rounded-lg font-semibold text-sm transition-all ${
+                    className={`w-full text-center py-3.5 rounded-lg font-semibold text-sm transition-all block ${
                       plan.popular
                         ? "bg-gradient-gold text-primary-foreground hover:opacity-90 hover:shadow-gold"
                         : "border border-border text-foreground hover:bg-secondary"
@@ -198,8 +196,8 @@ const Pricing = () => {
                 <thead>
                   <tr className="border-b border-border">
                     <th className="text-left py-4 px-4 text-sm font-semibold text-foreground">Feature</th>
-                    <th className="text-center py-4 px-4 text-sm font-semibold text-foreground">Starter</th>
-                    <th className="text-center py-4 px-4 text-sm font-semibold text-primary">Professional</th>
+                    <th className="text-center py-4 px-4 text-sm font-semibold text-foreground">Community</th>
+                    <th className="text-center py-4 px-4 text-sm font-semibold text-primary">Business</th>
                     <th className="text-center py-4 px-4 text-sm font-semibold text-foreground">Enterprise</th>
                   </tr>
                 </thead>
@@ -276,7 +274,7 @@ const Pricing = () => {
               Still Not Sure? <span className="text-gradient-gold">Talk to Us</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-8">
-              Our team will help you find the perfect plan for your business. No pressure, just honest advice.
+              Our team will help you find the perfect plan and show you OneApp in action with a personalized demo.
             </p>
             <Link
               to="/contact"

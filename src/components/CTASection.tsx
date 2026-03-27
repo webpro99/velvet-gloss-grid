@@ -9,9 +9,9 @@ interface CTASectionProps {
 }
 
 const CTASection = ({
-  title = "Ready to Transform Your Business?",
-  subtitle = "Join 2,500+ companies already using NovaPulse to drive growth. Start your free 14-day trial — no credit card required.",
-  buttonText = "Start Your Free Trial",
+  title = "Ready to Build Internal Tools 10x Faster?",
+  subtitle = "Join thousands of developers already using OneApp to build dashboards, admin panels, and CRUD apps — without the boilerplate. Start free today.",
+  buttonText = "Try OneApp Free",
   buttonLink = "/contact",
 }: CTASectionProps) => {
   return (
