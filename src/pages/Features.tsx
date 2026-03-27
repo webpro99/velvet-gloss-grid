@@ -52,7 +52,7 @@ const widgetCategories = [
       { icon: Minus, name: "Divider", desc: "Insert horizontal lines to visually separate sections." },
       { icon: FileInput, name: "Form / JSON Form", desc: "Generate forms from schemas to collect user input and validate data." },
       { icon: Layers, name: "Modal", desc: "Create overlay dialogs for confirmations, forms or additional information." },
-      { icon: Tabs, name: "Tabs", desc: "Organize content into multiple tab panels for cleaner navigation." },
+      { icon: PanelTop, name: "Tabs", desc: "Organize content into multiple tab panels for cleaner navigation." },
     ],
   },
   {
