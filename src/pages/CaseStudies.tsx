@@ -1,61 +1,97 @@
-import { TrendingUp, ArrowRight, BarChart3, Users, DollarSign, Target } from "lucide-react";
+import {
+  Layers, BarChart3, FileCode, Globe, Truck, Shield, ArrowRight, CheckCircle2,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
-import caseStudyHero from "@/assets/case-study-hero.jpg";
 
-const caseStudies = [
+const useCases = [
   {
-    company: "TechFlow Inc.",
-    industry: "B2B SaaS",
-    challenge: "TechFlow was struggling with a 12% monthly churn rate and couldn't identify which customers were at risk. Their existing analytics were fragmented across 8 different tools, making it impossible to get a unified view.",
-    solution: "We deployed NovaPulse's AI-powered churn prediction engine and consolidated all data into a single unified dashboard. The team could now see customer health scores in real-time and act proactively.",
-    results: [
-      { metric: "Churn Reduction", value: "67%", icon: TrendingUp },
-      { metric: "Revenue Growth", value: "+$2.4M", icon: DollarSign },
-      { metric: "Time Saved", value: "40hrs/week", icon: Target },
-      { metric: "Team Efficiency", value: "+85%", icon: Users },
+    icon: Shield,
+    title: "Account Management Dashboards",
+    subtitle: "User authentication, role management & activity tracking",
+    description: "Build custom dashboards for account administration with user authentication, account creation/editing, role management and activity tracking. Avoid the limitations of off-the-shelf products.",
+    benefits: [
+      "Customizable dashboards with widgets for user auth and role management",
+      "Seamless integration with databases, CRM systems and third-party APIs",
+      "User-friendly interface reduces technical barriers for non-developers",
+      "Granular access controls and audit logs for security",
     ],
-    quote: "NovaPulse didn't just give us data — it gave us the ability to predict and prevent churn before it happened. We saved over $2 million in the first year alone.",
-    person: "Sarah Chen, VP of Growth",
+    widgets: "Table, Form, Chart",
+    teams: "IT, HR, Customer Support",
   },
   {
-    company: "ScaleUp AI",
-    industry: "Enterprise AI",
-    challenge: "ScaleUp AI needed to track complex user journeys across web, mobile, and API touchpoints. Their marketing team was flying blind, spending $500K/month on ads without clear attribution.",
-    solution: "NovaPulse's multi-channel attribution engine mapped every touchpoint in the customer journey. The marketing team gained full visibility into which channels drove the highest-value conversions.",
-    results: [
-      { metric: "ROAS Improvement", value: "312%", icon: TrendingUp },
-      { metric: "Cost Per Lead", value: "-54%", icon: DollarSign },
-      { metric: "Conversion Rate", value: "+89%", icon: Target },
-      { metric: "Data Sources", value: "23→1", icon: BarChart3 },
+    icon: Layers,
+    title: "Admin Panels",
+    subtitle: "Manage data from any database or SaaS tool",
+    description: "Create memberships on MongoDB, update customer details on Salesforce, or delete outdated CMS content — in minutes. OneApp includes ready connectors, built-in CRUD operations and a growing library of widgets.",
+    benefits: [
+      "Connect to PostgreSQL, MongoDB, Snowflake, S3, Airtable, REST or GraphQL in minutes",
+      "Bind data to widgets with built-in CRUD functionality",
+      "Write JavaScript anywhere to extend functionality — or just drag and drop",
+      "Version control via Git and one-click cloud deployments",
     ],
-    quote: "We went from guessing to knowing. NovaPulse's attribution showed us exactly where our money was going and where it should go. We cut ad waste by 54% while doubling conversions.",
-    person: "Marcus Rodriguez, CEO",
+    widgets: "Tables, Forms, Buttons, Charts, Modals, Tabs",
+    teams: "Engineering, Operations, Product",
   },
   {
-    company: "Horizon Commerce",
-    industry: "E-Commerce",
-    challenge: "Horizon was processing 100K+ orders daily but lacked real-time inventory and demand forecasting. Stockouts were costing them $1.2M per quarter in lost sales.",
-    solution: "We implemented NovaPulse's predictive analytics with custom ML models for demand forecasting. Real-time inventory dashboards gave the ops team instant visibility across 12 warehouses.",
-    results: [
-      { metric: "Stockout Reduction", value: "91%", icon: TrendingUp },
-      { metric: "Revenue Recovery", value: "+$4.8M/yr", icon: DollarSign },
-      { metric: "Forecast Accuracy", value: "96%", icon: Target },
-      { metric: "Warehouses Synced", value: "12", icon: BarChart3 },
+    icon: FileCode,
+    title: "CRUD Front-Ends",
+    subtitle: "User-friendly interfaces for your databases",
+    description: "Connect your Postgres, MongoDB, S3 or Google Sheets, choose your table and click 'Generate New Page' to get a working app. Style with out-of-the-box themes or write custom code.",
+    benefits: [
+      "Auto-generate CRUD pages from any connected data source",
+      "45+ widgets for building interactive interfaces",
+      "JavaScript editor for dynamic updates and custom logic",
+      "Deploy to cloud or on-prem platforms",
     ],
-    quote: "NovaPulse's demand forecasting is scary accurate. We went from constant stockouts to 96% forecast accuracy. That's nearly $5 million in recovered revenue annually.",
-    person: "Emily Watson, Head of Operations",
+    widgets: "Tables, Forms, JSON Forms, Inputs, Selects, Buttons",
+    teams: "Developers, Data Teams",
   },
-];
-
-const aggregateStats = [
-  { value: "340%", label: "Average ROI" },
-  { value: "67%", label: "Avg Churn Reduction" },
-  { value: "4.2x", label: "Revenue Multiplier" },
-  { value: "< 30 days", label: "Time to Value" },
+  {
+    icon: BarChart3,
+    title: "Dashboards & BI",
+    subtitle: "Visualize and interact with data from any source",
+    description: "Get a dashboard for any team in under thirty minutes using ready connectors, a query IDE and a library of widgets. Bind data from multiple sources to the same widgets.",
+    benefits: [
+      "Drill-down views and role-based access on different pages",
+      "Connect multiple databases and APIs to one dashboard",
+      "Ready templates: sales analytics, customer support panels",
+      "Eliminate boilerplate while keeping full customization",
+    ],
+    widgets: "Charts, Tables, Progress, Gauges, Map Charts, Sliders",
+    teams: "Analytics, Sales, Executive",
+  },
+  {
+    icon: Globe,
+    title: "Portals",
+    subtitle: "External-facing apps for partners & customers",
+    description: "Build partner portals, community engagement portals, employee feedback systems or multi-warehouse inventory portals in less than thirty minutes. Join data from multiple tables and services.",
+    benefits: [
+      "Ready insert, update and delete queries for each datasource",
+      "Expose portals to thousands of users or a handful",
+      "Deploy via OneApp cloud or your preferred hosting platform",
+      "Templates for order management, inventory and IT asset tracking",
+    ],
+    widgets: "Tables, Lists, Forms, Charts, File Pickers, Modals",
+    teams: "Customer Success, Partners, Operations",
+  },
+  {
+    icon: Truck,
+    title: "Trackers",
+    subtitle: "Monitor orders, expenses, applicants & more",
+    description: "Replace spreadsheets with production-grade tracking apps. Ready connectors to Google Sheets and databases enable interactive data access. Automatic read/write triggers update records as events occur.",
+    benefits: [
+      "Granular access controls: department, seniority, ownership",
+      "Interactive UI that spreadsheets can't provide",
+      "Automatic triggers for real-time data updates",
+      "Fork templates: applicant trackers, time trackers, IT asset trackers",
+    ],
+    widgets: "Tables, Lists, Date Pickers, Checkboxes, Charts, Search",
+    teams: "HR, Finance, Logistics, Operations",
+  },
 ];
 
 const CaseStudies = () => {
@@ -64,92 +100,64 @@ const CaseStudies = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={caseStudyHero} alt="" className="w-full h-full object-cover opacity-15" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background to-background" />
-        </div>
-        <div className="container mx-auto px-6 relative z-10 text-center">
+      <section className="pt-32 pb-20">
+        <div className="container mx-auto px-6 text-center">
           <AnimatedSection>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Real Results From{" "}
-              <span className="text-gradient-gold">Real Companies</span>
+              What Can You Build with{" "}
+              <span className="text-gradient-gold">OneApp?</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              See how companies like yours are using NovaPulse to cut churn, boost revenue, and make smarter decisions — backed by real numbers and real outcomes.
+              From admin panels to customer portals, OneApp handles entire categories of internal tools. Here's how teams use it to ship faster and eliminate boilerplate.
             </p>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Aggregate Stats */}
-      <section className="py-16 border-y border-border">
+      {/* Use Cases */}
+      <section className="pb-24">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {aggregateStats.map((stat, i) => (
-              <AnimatedSection key={stat.label} delay={i * 0.1} className="text-center">
-                <div className="font-display text-3xl md:text-4xl font-bold text-gradient-gold mb-2">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+          <div className="max-w-5xl mx-auto space-y-8">
+            {useCases.map((uc, i) => (
+              <AnimatedSection key={uc.title}>
+                <div className="rounded-2xl bg-gradient-card border border-border overflow-hidden hover:border-primary/20 transition-all">
+                  <div className="p-8 md:p-10">
+                    <div className="flex items-start gap-4 mb-6">
+                      <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <uc.icon size={28} className="text-primary" />
+                      </div>
+                      <div>
+                        <h2 className="font-display text-2xl font-bold text-foreground">{uc.title}</h2>
+                        <p className="text-sm text-muted-foreground mt-1">{uc.subtitle}</p>
+                      </div>
+                    </div>
+
+                    <p className="text-muted-foreground leading-relaxed mb-6">{uc.description}</p>
+
+                    <div className="grid md:grid-cols-2 gap-3 mb-6">
+                      {uc.benefits.map((b) => (
+                        <div key={b} className="flex items-start gap-2">
+                          <CheckCircle2 size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-foreground">{b}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="flex flex-wrap gap-4 text-xs">
+                      <div className="px-3 py-1.5 rounded-full bg-secondary border border-border">
+                        <span className="text-muted-foreground">Widgets: </span>
+                        <span className="text-foreground font-medium">{uc.widgets}</span>
+                      </div>
+                      <div className="px-3 py-1.5 rounded-full bg-secondary border border-border">
+                        <span className="text-muted-foreground">Teams: </span>
+                        <span className="text-foreground font-medium">{uc.teams}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </AnimatedSection>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Case Studies */}
-      <section className="py-24">
-        <div className="container mx-auto px-6">
-          {caseStudies.map((cs, i) => (
-            <AnimatedSection key={cs.company} className="mb-24 last:mb-0">
-              <div className="rounded-2xl bg-gradient-card border border-border overflow-hidden">
-                {/* Header */}
-                <div className="p-8 md:p-12 border-b border-border">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-                    <div>
-                      <span className="text-xs uppercase tracking-widest text-primary font-semibold">{cs.industry}</span>
-                      <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mt-1">{cs.company}</h2>
-                    </div>
-                    <span className="text-sm text-muted-foreground bg-secondary px-4 py-2 rounded-full self-start">Case Study #{i + 1}</span>
-                  </div>
-
-                  {/* Results Grid */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {cs.results.map((r) => (
-                      <div key={r.metric} className="p-4 rounded-xl bg-background/50 border border-border text-center">
-                        <r.icon size={20} className="text-primary mx-auto mb-2" />
-                        <div className="font-display text-2xl font-bold text-foreground">{r.value}</div>
-                        <div className="text-xs text-muted-foreground mt-1">{r.metric}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Body */}
-                <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border">
-                  <div className="p-8 md:p-12">
-                    <h3 className="font-display font-semibold text-foreground mb-3 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-destructive" /> The Challenge
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">{cs.challenge}</p>
-                  </div>
-                  <div className="p-8 md:p-12">
-                    <h3 className="font-display font-semibold text-foreground mb-3 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-primary" /> The Solution
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">{cs.solution}</p>
-                  </div>
-                </div>
-
-                {/* Quote */}
-                <div className="p-8 md:p-12 bg-secondary/30 border-t border-border">
-                  <blockquote className="text-lg text-foreground italic leading-relaxed mb-4">
-                    "{cs.quote}"
-                  </blockquote>
-                  <p className="text-sm text-primary font-semibold">— {cs.person}</p>
-                </div>
-              </div>
-            </AnimatedSection>
-          ))}
         </div>
       </section>
 
@@ -158,17 +166,26 @@ const CaseStudies = () => {
         <div className="container mx-auto px-6 text-center">
           <AnimatedSection>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Your Success Story <span className="text-gradient-gold">Starts Here</span>
+              Start Building Your{" "}
+              <span className="text-gradient-gold">Use Case Today</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-8">
-              Join 2,500+ companies already transforming their business with NovaPulse. Let's write your case study next.
+              Pick a template, connect your data, and ship a production-ready internal tool in minutes — not weeks.
             </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-gradient-gold text-primary-foreground font-semibold hover:opacity-90 transition-all hover:shadow-gold"
-            >
-              Start Your Free Trial <ArrowRight size={18} />
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-gradient-gold text-primary-foreground font-semibold hover:opacity-90 transition-all hover:shadow-gold"
+              >
+                Try OneApp Free <ArrowRight size={18} />
+              </Link>
+              <Link
+                to="/templates"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg border border-border text-foreground font-semibold hover:bg-secondary transition-colors"
+              >
+                Browse Templates
+              </Link>
+            </div>
           </AnimatedSection>
         </div>
       </section>
