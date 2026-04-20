@@ -161,6 +161,52 @@ const CaseStudies = () => {
         </div>
       </section>
 
+      {/* Real-world stories */}
+      <section className="py-24 bg-secondary/20">
+        <div className="container mx-auto px-6">
+          <AnimatedSection className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+              How teams use <span className="text-gradient-gold">OneApp</span>
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Real workflows running in production — built by business teams, approved by IT.
+            </p>
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                tag: "Procurement portal",
+                story: "The procurement team builds an intake form for purchase requests. Submissions trigger a multi-level approval workflow in OneFlow with 48-hour SLAs. Approved requests auto-generate POs. All documents filed in OneDoc.",
+                outcome: "Runs for a year with zero IT changes — the business team updates the form themselves.",
+              },
+              {
+                tag: "HR case management",
+                story: "An HR analyst builds a case-tracking app with a dashboard, detail page, and document viewer. Employees see only their own cases; managers see their team; HR admins see everything — all controlled in OneApp's permission screen.",
+                outcome: "Every view is logged with IP and timestamp for compliance audits.",
+              },
+              {
+                tag: "Field engineering KB",
+                story: "Operations manuals, safety procedures, and incident reports are uploaded into OneApp's AI knowledge base. Engineers ask in natural language: \"What's the shutdown procedure for Unit 3?\" Every answer cites its source.",
+                outcome: "PII auto-masked. Contractors see public manuals only; staff engineers see everything.",
+              },
+            ].map((s, i) => (
+              <AnimatedSection key={s.tag} delay={i * 0.1}>
+                <div className="p-8 rounded-2xl bg-gradient-card border border-border hover:border-primary/30 transition-all h-full flex flex-col">
+                  <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider self-start mb-4">
+                    {s.tag}
+                  </span>
+                  <p className="text-foreground leading-relaxed mb-4 flex-1">{s.story}</p>
+                  <div className="pt-4 border-t border-border/50">
+                    <p className="text-sm text-muted-foreground italic">→ {s.outcome}</p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-24 bg-secondary/20">
         <div className="container mx-auto px-6 text-center">

@@ -230,6 +230,59 @@ const Pricing = () => {
         </div>
       </section>
 
+      {/* OneApp vs Competitors */}
+      <section className="py-24">
+        <div className="container mx-auto px-6">
+          <AnimatedSection className="text-center mb-12">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+              OneApp vs. <span className="text-gradient-gold">The Alternatives</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Where Retool and Power Apps charge for three separate products, OneApp gives you the canvas, the enterprise shell, and the AI knowledge base in one.
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection>
+            <div className="max-w-5xl mx-auto overflow-x-auto">
+              <table className="w-full min-w-[640px]">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left py-4 px-4 text-sm font-semibold text-foreground">Capability</th>
+                    <th className="text-center py-4 px-4 text-sm font-bold text-primary">OneApp</th>
+                    <th className="text-center py-4 px-4 text-sm font-semibold text-muted-foreground">Appsmith CE</th>
+                    <th className="text-center py-4 px-4 text-sm font-semibold text-muted-foreground">Retool</th>
+                    <th className="text-center py-4 px-4 text-sm font-semibold text-muted-foreground">Power Apps</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ["Drag-and-drop builder", "Yes", "Yes", "Yes", "Yes"],
+                    ["Self-hosted option", "Yes", "Yes", "Enterprise only", "No"],
+                    ["Azure AD SSO", "Built-in", "Business Edition only", "Yes", "Yes"],
+                    ["4-tier page-level RBAC", "Yes", "No", "Partial", "Limited"],
+                    ["Immutable audit log", "Yes", "No", "Enterprise only", "Limited"],
+                    ["Built-in AI knowledge base (RAG)", "Yes", "No", "No", "No"],
+                    ["PII detection + masking", "Yes", "No", "No", "No"],
+                    ["AI provider management", "Yes", "No", "No", "No"],
+                    ["Workflow trigger from form", "Native", "No", "Via external", "Power Automate (extra)"],
+                    ["Document management integration", "Native", "No", "No", "SharePoint (separate)"],
+                    ["License positioning", "Mid-market", "Free / enterprise upsell", "Per-user, expensive", "Microsoft bundle"],
+                  ].map((row, idx) => (
+                    <tr key={idx} className="border-b border-border/50">
+                      <td className="py-4 px-4 text-sm text-muted-foreground">{row[0]}</td>
+                      <td className="text-center py-4 px-4 text-sm font-semibold text-primary">{row[1]}</td>
+                      <td className="text-center py-4 px-4 text-sm text-foreground/70">{row[2]}</td>
+                      <td className="text-center py-4 px-4 text-sm text-foreground/70">{row[3]}</td>
+                      <td className="text-center py-4 px-4 text-sm text-foreground/70">{row[4]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-24">
         <div className="container mx-auto px-6">

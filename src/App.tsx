@@ -9,6 +9,7 @@ import Integrations from "./pages/Integrations.tsx";
 import Templates from "./pages/Templates.tsx";
 import Pricing from "./pages/Pricing.tsx";
 import CaseStudies from "./pages/CaseStudies.tsx";
+import Enterprise from "./pages/Enterprise.tsx";
 import About from "./pages/About.tsx";
 import Contact from "./pages/Contact.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/use-cases" element={<CaseStudies />} />
           <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/enterprise" element={<Enterprise />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
