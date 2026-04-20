@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
   ShieldCheck, KeyRound, ScrollText, Brain, BadgeCheck, Wand2, Boxes,
   Lock, Eye, FileLock2, AlertTriangle, ArrowRight, CheckCircle2,
@@ -7,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
+import enterpriseHero from "@/assets/enterprise-hero.jpg";
 
 const pillars = [
   {
@@ -105,31 +107,52 @@ const Enterprise = () => {
           <div className="absolute top-20 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/5 blur-3xl" />
           <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-accent/5 blur-3xl" />
         </div>
-        <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
-          <AnimatedSection>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border mb-6">
-              <ShieldCheck size={14} className="text-primary" />
-              <span className="text-sm text-muted-foreground">The Enterprise Low-Code Platform IT Will Approve</span>
-            </div>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Build apps fast.{" "}
-              <span className="text-gradient-gold">Deploy with the SSO,</span>{" "}
-              permissions, and audit your security team demands.
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Most low-code tools build the app — but stall the moment security looks at it.
-              OneApp ships with Azure AD SSO, four-tier RBAC, immutable audit logs, AI governance,
-              and Vault-backed secrets. Production code, running today.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-gradient-gold text-primary-foreground font-semibold hover:opacity-90 transition-all hover:shadow-gold">
-                Book a Demo <ArrowRight size={18} />
-              </Link>
-              <Link to="/pricing" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-border text-foreground font-semibold hover:bg-secondary transition-colors">
-                See Plans
-              </Link>
-            </div>
-          </AnimatedSection>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <AnimatedSection direction="left">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border mb-6">
+                <ShieldCheck size={14} className="text-primary" />
+                <span className="text-sm text-muted-foreground">IT-Approved Low-Code</span>
+              </div>
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+                Build apps fast.{" "}
+                <span className="text-gradient-gold">Deploy with the SSO,</span>{" "}
+                permissions, and audit your security team demands.
+              </h1>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                Most low-code tools build the app — but stall the moment security looks at it.
+                OneApp ships with Azure AD SSO, four-tier RBAC, immutable audit logs, AI governance,
+                and Vault-backed secrets. Production code, running today.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-gradient-gold text-primary-foreground font-semibold hover:opacity-90 transition-all hover:shadow-gold">
+                  Book a Demo <ArrowRight size={18} />
+                </Link>
+                <Link to="/pricing" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-border text-foreground font-semibold hover:bg-secondary transition-colors">
+                  See Plans
+                </Link>
+              </div>
+            </AnimatedSection>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="rounded-2xl overflow-hidden shadow-elevated border border-border/50">
+                <img
+                  src={enterpriseHero}
+                  alt="OneApp Enterprise Security & Audit Dashboard"
+                  width={1280}
+                  height={896}
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-primary/20 blur-2xl" />
+              <div className="absolute -top-4 -left-4 w-32 h-32 rounded-full bg-accent/20 blur-2xl" />
+            </motion.div>
+          </div>
         </div>
       </section>
 
